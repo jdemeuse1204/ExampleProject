@@ -1,0 +1,22 @@
+<template>
+    <div class="container" id="homePage">
+        <h2>Code Test Project</h2>
+        <div class="row filter-text-row">
+            <div class="col-xs-12">
+                <input value.bind="filterText & validate" keydown.delegate="onFilterTextChanged() & debounce:500" class="form-control" placeholder="Version Number..." />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="results-container">
+                    <h3 show.bind="!!results.length">${results.length} Software Matches Found</h3>
+                    <div repeat.for="item of results">
+                        <h4>${item.Name}</h4>
+                        <small>Version:&nbsp;${item.Version}</small>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
